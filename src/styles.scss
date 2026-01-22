@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+a.list-group-item.active {
+  // background-color: #0d6efd; /* blue */
+  background-color: #a3f804; /* blue */
+  color: white;
+  border-color: #a3f804;
+  padding: 10px 20px;
+}
+
+a.list-group-item.active h4,
+a.list-group-item.active p {
+  color: white;
+}
