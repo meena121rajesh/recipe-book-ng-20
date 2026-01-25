@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { RecipeList } from './recipe-list/recipe-list';
-import { RecipeDetail } from './recipe-detail/recipe-detail';
-import { Recipe } from './recipe.model';
-import { RecipeService } from './recipe';
+import { RecipeDetail } from './recipe-detail/recipe-detail'; 
 import { RouterOutlet } from '@angular/router';
 
 @Component({
@@ -13,16 +11,10 @@ import { RouterOutlet } from '@angular/router';
 })
 export class Recipes {
 
-  selectedRecipe!: Recipe;
-
-  constructor(private recipeService: RecipeService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.recipeService.recipeSelected.subscribe(
-      (recipe: Recipe) => {
-        this.selectedRecipe = recipe;
-      }
-    );
+ 
   }
 
 }
