@@ -23,10 +23,8 @@ export class ShoppingList {
     });
   }
 
-  onEditItem(index:number){
-    console.log('indx', index);
+  onEditItem(index:number){ 
     this.shoppingListService.startedEditing.next(index);
-    
   }
 
   ngOnDestroy() {
