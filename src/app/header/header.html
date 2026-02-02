@@ -14,35 +14,79 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        @if (isAuthenticated) {
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              style="cursor: pointer"
+              aria-current="page"
+              routerLink="/recipes"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Recipes</a
+            >
+          </li>
+        }
+
+        @if (!isAuthenticated) {
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              style="cursor: pointer"
+              aria-current="page"
+              routerLink="/auth"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Authenticate</a
+            >
+          </li>
+        }
+
         <li class="nav-item">
-          <a class="nav-link" style="cursor: pointer;" aria-current="page" routerLink="/recipes"     routerLinkActive="active"
-  [routerLinkActiveOptions]="{ exact: true }"
-            >Recipes</a
+          <a
+            class="nav-link"
+            style="cursor: pointer"
+            routerLink="/shopping-list"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Shopping List</a
           >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" style="cursor: pointer;" routerLink="/shopping-list"     routerLinkActive="active"
-  [routerLinkActiveOptions]="{ exact: true }">Shopping List</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
         <ul class="nav navbar-nav navbar-right">
+          <!-- <li style="line-height: 2.5;
+    padding-right: 16px;">
+            <a>Logout</a>
+          </li> -->
+
+          @if (isAuthenticated) {
           <li class="nav-item" appDropdown>
             <a
-              class="nav-link dropdown-toggle" 
+              class="nav-link dropdown-toggle"
               role="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
               Manage
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" style="cursor: pointer;" (click)="onSaveData()">Save Data</a></li>
-              <li><a class="dropdown-item" style="cursor: pointer;" (click)="onFetchData()">Fetch Data</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" style="cursor: pointer;">Others</a></li>
-            </ul>
-          </li>
+            </a> 
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" style="cursor: pointer" (click)="onSaveData()"
+                    >Save Data</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" style="cursor: pointer" (click)="onFetchData()"
+                    >Fetch Data</a
+                  >
+                </li>
+                <li><hr class="dropdown-divider" /></li>
+
+                <li><a class="dropdown-item" style="cursor: pointer" (click)="onLogout()">Logout</a></li>
+              </ul>
+            </li>
+          }
         </ul>
       </form>
     </div>
