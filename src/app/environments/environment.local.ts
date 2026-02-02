@@ -1,15 +1,15 @@
 export const environment = { 
-  apiKey: "AIzaSyBtjyP9X0KIng3ArqFVKOD_1QOQ5uYM2TE",
-  authDomain: "r-b-a-v2.firebaseapp.com",
-  projectId: "r-b-a-v2",
-  storageBucket: "r-b-a-v2.firebasestorage.app",
-  messagingSenderId: "462982448446",
-  appId: "1:462982448446:web:566bc13cde6dab50c1d86f",
-  measurementId: "G-8ZBK1CRY4Z",
+  apiKey: "your_API_KEY",
+  authDomain: "Firebase_Realtime_DB_URL",
+  projectId: "Your_Project_Id",
+  storageBucket: "Your_Bucket_Url",
+  messagingSenderId: "Your_Message_Sender_Id",
+  appId: "Your_APP_Id",
+  measurementId: "Your_Measurment_Id",
 
-  signupUri: 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=',
-  signinUri: 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=',
+  signupUri: 'Base_URL_Signup:signUp?key=',
+  signinUri: 'Base_URL_Login:signInWithPassword?key=',
 
-  recipePostBaseUri: 'https://r-b-a-v2-default-rtdb.firebaseio.com/'
+  recipePostBaseUri: 'DB_Base_Url'
   
 }
